@@ -9,6 +9,7 @@ import { styles } from '../components/indexStyle';
 import AStorage from '@api/asyncStorage';
 import help from '@api/helper';
 import { ModalAlert } from '../../../components/modalMessage';
+import { Color } from '../../../api/localization';
 
 class Login extends Component {
   constructor(props) {
@@ -83,24 +84,25 @@ class Login extends Component {
             <View style={{ marginTop: 100 }}>
               <InputValidateGroupWithValue
                 styleInput={{ color: 'grey' }}
-                placeholder={'username'}
+                placeholder={strings.username}
                 handleChange={(x) => this.setState({ username: x })}
               />
               <InputValidateGroupWithValue
                 secureTextEntry={true}
                 styleInput={{ color: 'grey' }}
-                placeholder={'password'}
+                placeholder={strings.password}
                 handleChange={(x) => this.setState({ password: x })}
               />
             </View>
             <Button style={styles.btn} onPress={() => this.execLogin()}>
               <Text style={styles.buttonText}>{strings.login}</Text>
             </Button>
-            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}><Text style={styles.later} >No, Maybe Later!</Text></TouchableWithoutFeedback>
+            {/* <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}><Text style={styles.later} >No, Maybe Later!</Text></TouchableWithoutFeedback> */}
             <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}><Text style={styles.later} >{strings.forgetPassword}</Text></TouchableWithoutFeedback>
-            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}><Text style={styles.later} >{strings.signUp}</Text></TouchableWithoutFeedback>
+
           </View>
         </Content>
+        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}><Text style={styles.signup} >{strings.signUpNote}<Text style={[styles.signup, { color: Color.PRIMARY, fontWeight: 'bold' }]} > {strings.signUp}</Text></Text></TouchableWithoutFeedback>
         <ModalAlert
           isModalVisible={this.state.isModalAlert}
           title={"oops Wrong"}

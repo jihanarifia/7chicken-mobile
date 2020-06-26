@@ -13,7 +13,7 @@ const strings = new LocalizedStrings({
     defaultLang: 'en',
     //Letter E
     //Letter F
-    forgetPassword: 'Forget Password',
+    forgetPassword: 'Forget your password?',
     //Letter G
     gotIt: 'Got It',
     //Letter H
@@ -27,12 +27,15 @@ const strings = new LocalizedStrings({
     no: 'No',
     //Letter O
     //Letter P
+    password: 'Password',
     //Letter Q
     //Letter R
     //Letter S
     signUp: 'Sign Up',
+    signUpNote: 'Don\'t have an account?',
     //Letter T
     //Letter U
+    username: 'Username',
     //Letter V
     //Letter X
     //Letter Y
@@ -49,7 +52,7 @@ const strings = new LocalizedStrings({
     defaultLang: 'en',
     //Huruf E
     //Huruf F
-    forgetPassword: 'Lupa Kata Sandi',
+    forgetPassword: 'Lupa kata sandi?',
     //Huruf G
     gotIt: 'Got It',
     //Huruf H
@@ -63,12 +66,15 @@ const strings = new LocalizedStrings({
     no: 'No',
     //Huruf O
     //Huruf P
+    password: 'Password',
     //Huruf Q
     //Huruf R
     //Huruf S
     signUp: 'Sign Up',
+    signUpNote: 'Tidak punya akun?',
     //Huruf T
     //Huruf U
+    username: 'Username',
     //Huruf V
     //Huruf X
     //Huruf Y

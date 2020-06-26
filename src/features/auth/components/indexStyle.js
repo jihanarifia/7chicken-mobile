@@ -14,9 +14,9 @@ const styles = StyleSheet.create({
     width: 300,
     backgroundColor: Color.PRIMARY,
     borderRadius: 25,
-    marginVertical: 10,
+    marginVertical: 20,
     paddingVertical: 13,
-    alignSelf:'center',
+    alignSelf: 'center',
     justifyContent: 'center'
   },
   buttonText: {
@@ -25,12 +25,20 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: Color.WHITE,
     textAlign: 'center',
-    alignSelf:'center'
+    alignSelf: 'center'
   },
   later: {
-    fontSize: 16,
+    fontSize: 14,
     fontFamily: Font.LIGHT,
-    alignSelf:'center',
-    marginTop: 20
-  }
+    alignSelf: 'center',
+    color: Color.BLACK
+  },
+  signup: {
+    fontSize: 14,
+    fontFamily: Font.LIGHT,
+    alignSelf: 'center',
+    position: 'absolute', 
+    bottom: 20,
+    color: Color.BLACK
+  },
 });
