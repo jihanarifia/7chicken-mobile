@@ -11,13 +11,12 @@ import help from '@api/helper';
 import { ModalAlert } from '../../../components/modalMessage';
 import { Color } from '../../../api/localization';
 
-class Login extends Component {
+class ForgotPassword extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      username: '',
-      password: '',
+      email: '',
       isLoading: false,
       isModalAlert: false,
     };
@@ -29,26 +28,25 @@ class Login extends Component {
   }
 
   handleBackButton = () => {
-    this.props.navigation.navigate('Home');
+    this.props.navigation.navigate('Login');
     return true;
   }
 
-  execLogin() {
+  _exec() {
     this.setState({ isLoading: true });
-    Axios.post(USER.LOGIN, {
-      username: this.state.username,
-      password: this.state.password
+    Axios.post(USER.FORGOT_PASSWORD, {
+      email: this.state.email,
     }).then((response) => {
       if (response.status === 200) {
         this.setState({ isLoading: false });
-        if (response.data) {
-          if (response.data.hasOwnProperty('token')) {
-            this.getProfile();
-            help.setToken(response.data.token);
-          }
-        } else {
-          this.setState({ isModalAlert: true });
-        }
+        // if (response.data) {
+        //   if (response.data.hasOwnProperty('token')) {
+        //     this.getProfile();
+        //     help.setToken(response.data.token);
+        //   }
+        // } else {
+        this.setState({ isModalAlert: true });
+        // }
       }
     }).catch(error => {
       console.log(error)
@@ -81,25 +79,18 @@ class Login extends Component {
               style={styles.logo}
               source={require('@assets/logo.png')}>
             </Image>
+            <Text style={styles.title}>{strings.forgetPassword}</Text>
+            <Text style={styles.desc}>{strings.forgetPasswordNote}</Text>
             <View style={{ marginTop: 100 }}>
               <InputValidateGroupWithValue
                 styleInput={{ color: 'grey' }}
-                placeholder={strings.username}
-                handleChange={(x) => this.setState({ username: x })}
-              />
-              <InputValidateGroupWithValue
-                secureTextEntry={true}
-                styleInput={{ color: 'grey' }}
-                placeholder={strings.password}
-                handleChange={(x) => this.setState({ password: x })}
+                placeholder={strings.email}
+                handleChange={(x) => this.setState({ email: x })}
               />
             </View>
-            <Button style={styles.btn} onPress={() => this.execLogin()}>
-              <Text style={styles.buttonText}>{strings.login}</Text>
+            <Button style={styles.btn} onPress={() => this._exec()}>
+              <Text style={styles.buttonText}>{strings.submit}</Text>
             </Button>
-            {/* <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}><Text style={styles.later} >No, Maybe Later!</Text></TouchableWithoutFeedback> */}
-            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ForgotPassword')}><Text style={styles.later} >{strings.forgetPassword}</Text></TouchableWithoutFeedback>
-
           </View>
         </Content>
         <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Register')}><Text style={styles.signup} >{strings.signUpNote}<Text style={[styles.signup, { color: Color.PRIMARY, fontWeight: 'bold' }]} > {strings.signUp}</Text></Text></TouchableWithoutFeedback>
@@ -116,4 +107,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default ForgotPassword;

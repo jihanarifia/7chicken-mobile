@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200
   },
-
   btn: {
     width: 300,
     backgroundColor: Color.PRIMARY,
@@ -37,8 +36,23 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontFamily: Font.LIGHT,
     alignSelf: 'center',
-    position: 'absolute', 
+    position: 'absolute',
     bottom: 20,
     color: Color.BLACK
   },
+  title: {
+    fontSize: 18,
+    fontFamily: Font.LIGHT,
+    fontWeight: "bold",
+    alignSelf: 'center',
+    color: Color.BLACK,
+    textTransform: 'uppercase'
+  }, 
+  desc: {
+    fontSize: 13,
+    fontFamily: Font.LIGHT,
+    textAlign: 'center',
+    color: Color.PRIMARY,
+    paddingVertical: 10
+  }
 });
