@@ -19,6 +19,7 @@ const strings = new LocalizedStrings({
     firstName: 'First Name',
     //Letter G
     gotIt: 'Got It',
+    goBack: 'Back',
     //Letter H
     //Letter I
     //Letter J
@@ -30,6 +31,7 @@ const strings = new LocalizedStrings({
     //Letter N
     no: 'No',
     //Letter O
+    otpNote: 'Enter the OTP code that we have sent to:',
     //Letter P
     password: 'Password',
     phoneNumber: 'Phone number',
@@ -66,6 +68,7 @@ const strings = new LocalizedStrings({
     firstName: 'Nama Depan',
     //Huruf G
     gotIt: 'Got It',
+    goBack: 'Kembali',
     //Huruf H
     //Huruf I
     //Huruf J
@@ -77,6 +80,7 @@ const strings = new LocalizedStrings({
     //Huruf N
     no: 'No',
     //Huruf O
+    otpNote: 'Masukkan kode OTP yang telah kami kirim ke :',
     //Huruf P
     password: 'Password',
     phoneNumber: 'Nomor Telepon',

@@ -37,6 +37,9 @@ class Register extends Component {
   }
 
   _execForm() {
+
+    this.props.navigation.navigate('OTP');
+    return false;
     this.setState({ isLoading: true });
     Axios.post(USER.REGISTER, {
       firstname: this.state.firstname,
@@ -53,7 +56,7 @@ class Register extends Component {
         //     help.setToken(response.data.token);
         //   }
         // } else {
-          this.setState({ isModalAlert: true });
+        this.setState({ isModalAlert: true });
         // }
       }
     }).catch(error => {

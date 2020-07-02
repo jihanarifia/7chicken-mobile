@@ -47,12 +47,27 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     color: Color.BLACK,
     textTransform: 'uppercase'
-  }, 
+  },
   desc: {
     fontSize: 13,
     fontFamily: Font.LIGHT,
     textAlign: 'center',
     color: Color.PRIMARY,
     paddingVertical: 10
-  }
+  },
+  txtBold14: {
+    fontFamily: Font.BOLD,
+    fontSize: 14,
+    color: Color.PRIMARY,
+  },
+  txtTimer: {
+    fontFamily: Font.LIGHT,
+    fontSize: 14,
+    marginTop: 10
+  },
+  txtRegular15: {
+    fontFamily: Font.LIGHT,
+    fontSize: 15,
+    marginTop: 20
+  },
 });
