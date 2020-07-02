@@ -1,8 +1,8 @@
-import {StyleSheet} from 'react-native';
-import {Screen, Font} from '@api/localization';
-import {Color} from '../api/localization';
+import { StyleSheet } from 'react-native';
+import { Screen, Font } from '@api/localization';
+import { Color } from '../api/localization';
 
-export {globalStyles, formGlobalStyles};
+export { globalStyles, formGlobalStyles };
 
 const globalStyles = StyleSheet.create({
   pageName: {
@@ -18,6 +18,18 @@ const globalStyles = StyleSheet.create({
     borderRadius: 10,
     width: '100%',
     marginVertical: '5%'
+  },
+  cardContainer: {
+    height: 'auto',
+    borderRadius: 10,
+    marginBottom: 10,
+    borderWidth: 1,
+    borderBottomColor: Color.LIGHT_GREY,
+    borderLeftColor: Color.LIGHT_GREY,
+    borderRightColor: Color.LIGHT_GREY,
+    borderTopColor: Color.WHITE,
+    padding: 10,
+    backgroundColor: Color.WHITE
   },
 });
 

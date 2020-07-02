@@ -36,9 +36,9 @@ const MainTabNavigator = createBottomTabNavigator(
         return (
           <View style={{ justifyContent: 'center', alignItems: 'center' }}>
             <Image
-              style={focused ? { height: 30, width: 30, resizeMode: 'contain' } : { height: 25, width: 25, resizeMode: 'contain' }}
+              style={focused ? { height: 30, width: 30, resizeMode: 'contain' } : { height: 25, width: 25, resizeMode: 'contain', opacity: 0.4 }}
               source={iconName}
-              tintColor={focused ? null : Color.GREY}
+              // tintColor={focused ? null : Color.GREY}
             />
           </View>
         );

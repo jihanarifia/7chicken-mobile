@@ -117,7 +117,7 @@ AStorage.getItem('language')
 const Color = {
   PRIMARY: '#a50000',
   SECONDARY: '#ffe100',
-  INTERMEDIATE: '#a54a00',
+  INTERMEDIATE: '#ff1a05',
   DARK_GREY: '#565656',
   GREY: '#D8D8D8',
   LIGHT_GREY: '#F5F5F5',
