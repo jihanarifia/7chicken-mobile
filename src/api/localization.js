@@ -27,6 +27,7 @@ const strings = new LocalizedStrings({
     //Letter L
     login: 'Login',
     lastName: 'Last Name',
+    logout: 'Log Out',
     //Letter M
     //Letter N
     no: 'No',
@@ -77,6 +78,7 @@ const strings = new LocalizedStrings({
     //Huruf L
     login: 'Login',
     lastName: 'Nama Belakang',
+    logout: 'Log Out',
     //Huruf M
     //Huruf N
     no: 'No',
