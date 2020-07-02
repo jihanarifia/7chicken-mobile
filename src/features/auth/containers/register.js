@@ -11,12 +11,15 @@ import help from '@api/helper';
 import { ModalAlert } from '../../../components/modalMessage';
 import { Color } from '../../../api/localization';
 
-class Login extends Component {
+class Register extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      username: '',
+      firstname: '',
+      lastname: '',
+      phonenumber: '',
+      email: '',
       password: '',
       isLoading: false,
       isModalAlert: false,
@@ -33,22 +36,25 @@ class Login extends Component {
     return true;
   }
 
-  execLogin() {
+  _execForm() {
     this.setState({ isLoading: true });
-    Axios.post(USER.LOGIN, {
-      username: this.state.username,
-      password: this.state.password
+    Axios.post(USER.REGISTER, {
+      firstname: this.state.firstname,
+      lastname: this.state.lastname,
+      phonenumber: this.state.phonenumber,
+      email: this.state.email,
+      password: this.state.password,
     }).then((response) => {
       if (response.status === 200) {
         this.setState({ isLoading: false });
-        if (response.data) {
-          if (response.data.hasOwnProperty('token')) {
-            this.getProfile();
-            help.setToken(response.data.token);
-          }
-        } else {
+        // if (response.data) {
+        //   if (response.data.hasOwnProperty('token')) {
+        //     this.getProfile();
+        //     help.setToken(response.data.token);
+        //   }
+        // } else {
           this.setState({ isModalAlert: true });
-        }
+        // }
       }
     }).catch(error => {
       console.log(error)
@@ -81,28 +87,36 @@ class Login extends Component {
               style={styles.logo}
               source={require('@assets/logo.png')}>
             </Image>
-            <View style={{ marginTop: 100 }}>
+            <Text style={styles.title}>{strings.signUp}</Text>
+            <View style={{ marginTop: 20 }}>
               <InputValidateGroupWithValue
                 styleInput={{ color: 'grey' }}
-                placeholder={strings.username}
-                handleChange={(x) => this.setState({ username: x })}
-              />
+                placeholder={strings.firstName}
+                handleChange={(x) => this.setState({ firstname: x })} />
+              <InputValidateGroupWithValue
+                styleInput={{ color: 'grey' }}
+                placeholder={strings.lastName}
+                handleChange={(x) => this.setState({ lastname: x })} />
+              <InputValidateGroupWithValue
+                styleInput={{ color: 'grey' }}
+                placeholder={strings.phoneNumber}
+                handleChange={(x) => this.setState({ phonenumber: x })} />
+              <InputValidateGroupWithValue
+                styleInput={{ color: 'grey' }}
+                placeholder={strings.email}
+                handleChange={(x) => this.setState({ email: x })} />
               <InputValidateGroupWithValue
                 secureTextEntry={true}
                 styleInput={{ color: 'grey' }}
                 placeholder={strings.password}
-                handleChange={(x) => this.setState({ password: x })}
-              />
+                handleChange={(x) => this.setState({ password: x })} />
             </View>
-            <Button style={styles.btn} onPress={() => this.execLogin()}>
-              <Text style={styles.buttonText}>{strings.login}</Text>
+            <Button style={styles.btn} onPress={() => this._execForm()}>
+              <Text style={styles.buttonText}>{strings.signUp}</Text>
             </Button>
-            {/* <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}><Text style={styles.later} >No, Maybe Later!</Text></TouchableWithoutFeedback> */}
-            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ForgotPassword')}><Text style={styles.later} >{strings.forgetPassword}</Text></TouchableWithoutFeedback>
-
           </View>
         </Content>
-        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Register')}><Text style={styles.signup} >{strings.signUpQuestion}<Text style={[styles.signup, { color: Color.PRIMARY, fontWeight: 'bold' }]} > {strings.signUp}</Text></Text></TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Login')}><Text style={styles.signup} >{strings.signInQuestion}<Text style={[styles.signup, { color: Color.PRIMARY, fontWeight: 'bold' }]} > {strings.signIn}</Text></Text></TouchableWithoutFeedback>
         <ModalAlert
           isModalVisible={this.state.isModalAlert}
           title={"oops Wrong"}
@@ -116,4 +130,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Register;

@@ -93,7 +93,7 @@ class ForgotPassword extends Component {
             </Button>
           </View>
         </Content>
-        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Register')}><Text style={styles.signup} >{strings.signUpNote}<Text style={[styles.signup, { color: Color.PRIMARY, fontWeight: 'bold' }]} > {strings.signUp}</Text></Text></TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Register')}><Text style={styles.signup} >{strings.signUpQuestion}<Text style={[styles.signup, { color: Color.PRIMARY, fontWeight: 'bold' }]} > {strings.signUp}</Text></Text></TouchableWithoutFeedback>
         <ModalAlert
           isModalVisible={this.state.isModalAlert}
           title={"oops Wrong"}

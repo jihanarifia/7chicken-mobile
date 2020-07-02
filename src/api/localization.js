@@ -16,6 +16,7 @@ const strings = new LocalizedStrings({
     //Letter F
     forgetPassword: 'Forget your password?',
     forgetPasswordNote: 'We just need your registered email to send you password reset code',
+    firstName: 'First Name',
     //Letter G
     gotIt: 'Got It',
     //Letter H
@@ -24,18 +25,21 @@ const strings = new LocalizedStrings({
     //Letter K
     //Letter L
     login: 'Login',
+    lastName: 'Last Name',
     //Letter M
     //Letter N
     no: 'No',
     //Letter O
     //Letter P
     password: 'Password',
+    phoneNumber: 'Phone number',
     //Letter Q
     //Letter R
     //Letter S
     signIn: 'Sign In',
+    signInQuestion: 'You have an account?',
     signUp: 'Sign Up',
-    signUpNote: 'Don\'t have an account?',
+    signUpQuestion: 'Don\'t have an account?',
     submit: 'Submit',
     //Letter T
     //Letter U
@@ -59,6 +63,7 @@ const strings = new LocalizedStrings({
     //Huruf F
     forgetPassword: 'Lupa kata sandi?',
     forgetPasswordNote: 'Kami hanya perlu email terdaftar Anda untuk mengirimkan kode reset kata sandi',
+    firstName: 'Nama Depan',
     //Huruf G
     gotIt: 'Got It',
     //Huruf H
@@ -67,18 +72,21 @@ const strings = new LocalizedStrings({
     //Huruf K
     //Huruf L
     login: 'Login',
+    lastName: 'Nama Belakang',
     //Huruf M
     //Huruf N
     no: 'No',
     //Huruf O
     //Huruf P
     password: 'Password',
+    phoneNumber: 'Nomor Telepon',
     //Huruf Q
     //Huruf R
     //Huruf S
     signIn: 'Sign In',
+    signInQuestion: 'Anda punya akun?',
     signUp: 'Sign Up',
-    signUpNote: 'Tidak punya akun?',
+    signUpQuestion: 'Tidak punya akun?',
     submit: 'Kirim',
     //Huruf T
     //Huruf U
