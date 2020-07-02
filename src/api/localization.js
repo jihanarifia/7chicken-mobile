@@ -40,6 +40,7 @@ const strings = new LocalizedStrings({
     //Letter S
     signIn: 'Sign In',
     signInQuestion: 'You have an account?',
+    signInSuccessMsg: 'Registration Success, Login using the account that has been registered',
     signUp: 'Sign Up',
     signUpQuestion: 'Don\'t have an account?',
     submit: 'Submit',
@@ -89,6 +90,7 @@ const strings = new LocalizedStrings({
     //Huruf S
     signIn: 'Sign In',
     signInQuestion: 'Anda punya akun?',
+    signInSuccessMsg: 'Pendaftaran Sukses, silahkan login menggunakan akun yang telah didaftarkan',
     signUp: 'Sign Up',
     signUpQuestion: 'Tidak punya akun?',
     submit: 'Kirim',

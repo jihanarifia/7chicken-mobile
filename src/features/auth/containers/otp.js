@@ -134,6 +134,7 @@ class OTP extends Component {
           this.setState({ isLoadingOtp: false, otpValue: ['', '', '', '', '', ''], isFailValidate: false },
             () => this.props.navigation.navigate('PIN', { type: 'ForgotPIN' }));
         } else {
+          // signInSuccessMsg
           this.setState({ isLoadingOtp: false, otpValue: ['', '', '', '', '', ''], isFailValidate: false },
             () => this.props.navigation.navigate('PIN', { type: 'register' }));
         }

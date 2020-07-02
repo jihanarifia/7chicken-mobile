@@ -3,8 +3,8 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import AuthNavigator from './auth';
 
 const AppSwitchNavigator = createSwitchNavigator({
-    Auth: { screen: AuthNavigator },
     Main: { screen: MainTabNavigator },
+    Auth: { screen: AuthNavigator },
 });
 const appNavigator = createAppContainer(AppSwitchNavigator);
 
