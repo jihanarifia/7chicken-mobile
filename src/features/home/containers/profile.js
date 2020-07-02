@@ -4,10 +4,7 @@ import { Container, Text, Grid, Col, Icon } from 'native-base';
 import { strings, Color, Font, Screen } from '@api/localization';
 import { styles } from '../components/profileStyle';
 import { CustomButton } from '@components/customButton';
-import AStorage from '@api/asyncStorage';
-import helper from '@api/helper';
-import { PROFILE, NOTIFICATION, USER, APP_VERSION } from '@api/constants';
-import Axios from 'axios';
+import { PROFILE, APP_VERSION } from '@api/constants';
 import { ModalAlert, ModalAlert as ModalError } from '@components/modalMessage';
 import Skeleton from '../components/skeletonProfile';
 
@@ -16,12 +13,11 @@ class Profile extends Component {
     super(props);
 
     this.state = {
-      userId: '',
       menuList: [
-        { id: 1, title: 'Change Profile', rootName: 'ChangePin' },
-        { id: 2, title: 'FAQ', rootName: 'SubAccount' },
-        { id: 3, title: 'Hubungi Kamu', rootName: 'ParkingAccess' },
-        { id: 4, title: 'Privacy Policy', rootName: 'PrivacyPolicy' },
+        { id: 1, title: strings.changeProfile, rootName: 'changeProfile' },
+        { id: 2, title: strings.faq, rootName: 'faq' },
+        { id: 3, title: strings.contactUs, rootName: 'contactUs' },
+        { id: 4, title: strings.privacyPolicy, rootName: 'PrivacyPolicy' },
       ],
       isLoadingLogout: false,
       isLoading: false,
@@ -29,12 +25,9 @@ class Profile extends Component {
       msgAlert: '',
       isDefaultUnit: false,
       isModalUnit: false,
-      unitList: [],
-      unitLength: 0,
       rootName: '',
       isModalError: false,
       txtAlert: '',
-      psCode: ''
     }
   }
 
@@ -52,7 +45,6 @@ class Profile extends Component {
   }
 
   getStorage() {
-
     this.setState({ isLoading: false });
   }
 
@@ -82,28 +74,23 @@ class Profile extends Component {
     );
   }
 
-
   renderItem(item) {
     return (
       <View>
         {item.id == 3 || item.id == 7 ? <View style={{ width: Screen.SCREEN_WIDTH, padding: 3, backgroundColor: '#EFEFEF', marginBottom: 10 }} /> : null}
-        <TouchableWithoutFeedback onPress={() => this.menuAction(item)}>
+        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate(item.rootName)}>
           <View>
             <View style={{ flexDirection: 'row', marginHorizontal: 25, marginVertical: 15 }}>
               <Text style={styles.txtName}>{item.title}</Text>
               <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-end', }}>
-                <Icon active name='ios-arrow-forward' style={{ color: Color.GREY_ALERT, fontSize: 16 }} />
+                <Icon active name='ios-arrow-forward' style={{ color: Color.GREY, fontSize: 16 }} />
               </View>
             </View>
-            <View style={{ width: Screen.SCREEN_WIDTH, height: 1, backgroundColor: Color.LIGHT_GREY, marginLeft: 20 }}></View>
+            <View style={{ width: Screen.SCREEN_WIDTH, height: 1, backgroundColor: Color.GREY, marginLeft: 20 }}></View>
           </View>
         </TouchableWithoutFeedback>
       </View>
     )
-  }
-
-  menuAction(item) {
-    this.props.navigation.navigate(item.rootName, { userId: this.state.userId });
   }
 
   render() {
@@ -133,8 +120,11 @@ class Profile extends Component {
               onEndReachedThreshold={0.5}
               renderItem={({ item }) => this.renderItem(item)} />}
           </View>
+          <TouchableWithoutFeedback onPress={() => this.logOut()} >
+            <Text style={[styles.txtName, { textAlign: 'center', marginTop: -10 }]}>{strings.logout}</Text>
+          </TouchableWithoutFeedback>
+          <Text style={[styles.txtName, { textAlign: 'center', marginTop: -10 }]}>{APP_VERSION}</Text>
         </View>
-
         <View style={{ position: 'absolute', bottom: 0, alignSelf: 'center' }}>
           <CustomButton
             style={{}}
@@ -144,7 +134,7 @@ class Profile extends Component {
             fontSize={14}
             fontFamily={Font.BOLD}
             colorText={'red'}
-            colorLoading={Color.GREY_ALERT}
+            colorLoading={Color.GREY}
             onPress={() => this.logOut()} />
           <Text style={[styles.txtName, { textAlign: 'center', marginTop: -10 }]}>{APP_VERSION}</Text>
         </View>

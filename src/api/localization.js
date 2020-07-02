@@ -9,11 +9,14 @@ const strings = new LocalizedStrings({
     //Letter B
     back: 'Back',
     //Letter C
+    changeProfile: 'Change Profile',
+    contactUs: 'Contact Us',
     //Letter D
     defaultLang: 'en',
     //Letter E
     email: 'Email',
     //Letter F
+    faq: 'FAQ',
     forgetPassword: 'Forget your password?',
     forgetPasswordNote: 'We just need your registered email to send you password reset code',
     firstName: 'First Name',
@@ -36,6 +39,7 @@ const strings = new LocalizedStrings({
     //Letter P
     password: 'Password',
     phoneNumber: 'Phone number',
+    privacyPolicy: 'Privacy Policy',
     //Letter Q
     //Letter R
     //Letter S
@@ -60,11 +64,14 @@ const strings = new LocalizedStrings({
     //Huruf B
     back: 'Back',
     //Huruf C
+    changeProfile: 'Ubah Profil',
+    contactUs: 'Hubungi Kami',
     //Huruf D
     defaultLang: 'en',
     //Huruf E
     email: 'Email',
     //Huruf F
+    faq: 'FAQ',
     forgetPassword: 'Lupa kata sandi?',
     forgetPasswordNote: 'Kami hanya perlu email terdaftar Anda untuk mengirimkan kode reset kata sandi',
     firstName: 'Nama Depan',
@@ -87,6 +94,7 @@ const strings = new LocalizedStrings({
     //Huruf P
     password: 'Password',
     phoneNumber: 'Nomor Telepon',
+    privacyPolicy: 'Privacy Policy',
     //Huruf Q
     //Huruf R
     //Huruf S
