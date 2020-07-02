@@ -4,7 +4,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 import Setting from '@features/setting/containers';
 import {strings, Color} from '@api/localization';
 
-const SettingStack = createStackNavigator(
+const MapsStack = createStackNavigator(
   {
     Setting: {
       screen: Setting,
@@ -36,7 +36,7 @@ const SettingStack = createStackNavigator(
   },
 );
 
-SettingStack.navigationOptions = ({navigation}) => {
+MapsStack.navigationOptions = ({navigation}) => {
   let tabBarVisible = true;
   if (navigation.state.index > 0) {
     tabBarVisible = false;
@@ -47,4 +47,4 @@ SettingStack.navigationOptions = ({navigation}) => {
   };
 };
 
-export default SettingStack;
+export default MapsStack;

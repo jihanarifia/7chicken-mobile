@@ -4,7 +4,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 import Category from '@features/category/containers';
 import DetailCategory from '@features/category/containers/detail';
 
-const CategoryStack = createStackNavigator(
+const MeetingStack = createStackNavigator(
   {
     Category: {
       screen: Category,
@@ -39,7 +39,7 @@ const CategoryStack = createStackNavigator(
   },
 );
 
-CategoryStack.navigationOptions = ({navigation}) => {
+MeetingStack.navigationOptions = ({navigation}) => {
   let tabBarVisible = true;
   if (navigation.state.index > 0) {
     tabBarVisible = false;
@@ -50,4 +50,4 @@ CategoryStack.navigationOptions = ({navigation}) => {
   };
 };
 
-export default CategoryStack;
+export default MeetingStack;
