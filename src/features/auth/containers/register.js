@@ -39,7 +39,7 @@ class Register extends Component {
   _execForm() {
 
     this.props.navigation.navigate('OTP');
-    return false;
+    // return false;
     this.setState({ isLoading: true });
     Axios.post(USER.REGISTER, {
       firstname: this.state.firstname,
@@ -47,6 +47,19 @@ class Register extends Component {
       phonenumber: this.state.phonenumber,
       email: this.state.email,
       password: this.state.password,
+        "address": "string", //not required
+        "birth_date": "string", // dd-mm-yyyy
+        "display_name": "string",
+        "email": "string",
+        "is_deleted": true, // hapus
+        "level_id": "string", // level user 
+        "member_no": "string", //a
+        "password": "string",
+        "phone": "string", // +63 harus
+        "role_ids": [ // isi hardcode
+          "string"
+        ],
+      
     }).then((response) => {
       if (response.status === 200) {
         this.setState({ isLoading: false });

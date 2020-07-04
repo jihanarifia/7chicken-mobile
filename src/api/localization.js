@@ -20,6 +20,7 @@ const strings = new LocalizedStrings({
     forgetPassword: 'Forget your password?',
     forgetPasswordNote: 'We just need your registered email to send you password reset code',
     firstName: 'First Name',
+    failedLogin: 'Failed login, please try again.',
     //Letter G
     gotIt: 'Got It',
     goBack: 'Back',
@@ -35,6 +36,7 @@ const strings = new LocalizedStrings({
     //Letter N
     no: 'No',
     //Letter O
+    oopsWrong: 'Oops Wrong...',
     otpNote: 'Enter the OTP code that we have sent to:',
     //Letter P
     password: 'Password',
@@ -49,6 +51,8 @@ const strings = new LocalizedStrings({
     signUp: 'Sign Up',
     signUpQuestion: 'Don\'t have an account?',
     submit: 'Submit',
+    successMsg: 'Yeay...',
+    successLogin: 'Successfully login, enjoy our feature.',
     //Letter T
     //Letter U
     username: 'Username',
@@ -75,6 +79,7 @@ const strings = new LocalizedStrings({
     forgetPassword: 'Lupa kata sandi?',
     forgetPasswordNote: 'Kami hanya perlu email terdaftar Anda untuk mengirimkan kode reset kata sandi',
     firstName: 'Nama Depan',
+    failedLogin: 'Login gagal, coba lagi.',
     //Huruf G
     gotIt: 'Got It',
     goBack: 'Kembali',
@@ -90,6 +95,7 @@ const strings = new LocalizedStrings({
     //Huruf N
     no: 'No',
     //Huruf O
+    oopsWrong: 'Oops Wrong...',
     otpNote: 'Masukkan kode OTP yang telah kami kirim ke :',
     //Huruf P
     password: 'Password',
@@ -104,6 +110,8 @@ const strings = new LocalizedStrings({
     signUp: 'Sign Up',
     signUpQuestion: 'Tidak punya akun?',
     submit: 'Kirim',
+    successMsg: 'Yeay...',
+    successLogin: 'Login berhasil, silahkan menikmati aplikasi',
     //Huruf T
     //Huruf U
     username: 'Username',

@@ -20,6 +20,7 @@ class Login extends Component {
       password: '',
       isLoading: false,
       isModalAlert: false,
+      isSuccess: false,
     };
     BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
   }
@@ -36,38 +37,34 @@ class Login extends Component {
   execLogin() {
     this.setState({ isLoading: true });
     Axios.post(USER.LOGIN, {
-      username: this.state.username,
-      password: this.state.password
+      "identifier": this.state.username,
+      "password": this.state.password
     }).then((response) => {
       if (response.status === 200) {
-        this.setState({ isLoading: false });
+        console.log(response)
         if (response.data) {
-          if (response.data.hasOwnProperty('token')) {
-            this.getProfile();
-            help.setToken(response.data.token);
+          if (response.data.hasOwnProperty('access_token')) {
+            help.setToken(response.data.access_token);
+            this.getProfile(response.data.user_id);
           }
-        } else {
-          this.setState({ isModalAlert: true });
         }
       }
     }).catch(error => {
-      console.log(error)
       this.setState({ isLoading: false, isModalAlert: true });
-    });
+    })
   }
 
-  getProfile() {
-    Axios.get(USER.GET_PROFILE).then((response) => {
+  getProfile(user_id) {
+    Axios.get(USER.GET_PROFILE + user_id).then((response) => {
       if (response.status === 200) {
-        this.setState({ isLoading: false });
-        if (response.data) {
-          AStorage.setItem('userData', response.data);
-        } else {
-          this.setState({ isModalAlert: true });
+        if (response.data.hasOwnProperty('result')) {
+          console.log(response)
+          this.props.navigation.navigate('Home')
+          AStorage.setItem('userData', response.data.result);
+          this.setState({ isLoading: false, isModalAlert: true, isSuccess: true });
         }
       }
-    }).catch(error => {
-      console.log(error)
+    }).catch(() => {
       this.setState({ isLoading: false, isModalAlert: true });
     });
   }
@@ -105,8 +102,8 @@ class Login extends Component {
         <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Register')}><Text style={styles.signup} >{strings.signUpQuestion}<Text style={[styles.signup, { color: Color.PRIMARY, fontWeight: 'bold' }]} > {strings.signUp}</Text></Text></TouchableWithoutFeedback>
         <ModalAlert
           isModalVisible={this.state.isModalAlert}
-          title={"oops Wrong"}
-          txtAlert={"Failed Login"}
+          title={this.state.isSuccess ? strings.successMsg : strings.oopsWrong}
+          txtAlert={this.state.isSuccess ? strings.successLogin : strings.failedLogin}
           handleOk={() => {
             this.setState({ isModalAlert: false })
           }}
